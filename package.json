@@ -1,0 +1,20 @@
+{
+  "name": "hunter-bot-concursos",
+  "version": "1.0.0",
+  "description": "Bot de scraping para busca de concursos de TI",
+  "main": "scraping-script.js",
+  "scripts": {
+    "start": "node scraping-script.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.10.1",
+    "puppeteer": "^24.36.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
