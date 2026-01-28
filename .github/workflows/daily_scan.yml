@@ -28,4 +28,4 @@ jobs:
       - name: Run Hunter Bot
         run: node scraping-script.js
         env:
-          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_PASS: ${{ process.env.EMAIL_PASS }}
