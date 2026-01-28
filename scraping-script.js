@@ -115,7 +115,7 @@ async function extrairDados(page) {
 
 async function buscarVagas() {
     console.log("\x1b[36m%s\x1b[0m", "🤖 Iniciando Varredura Hunter Bot 3.2...");
-    const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox'] });
+    const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
     let resultadosBrutos = [];
 
