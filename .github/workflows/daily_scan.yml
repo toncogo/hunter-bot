@@ -2,12 +2,12 @@ name: Hunter Bot Daily Scan
 
 on:
   schedule:
-    # O horário é em UTC. 05:00 AM Brasil (BRT) é 08:00 AM UTC.
+    # 08:00 UTC corresponde às 05:00 AM no horário de Brasília (GMT-3)
     - cron: '0 8 * * *'
-  workflow_dispatch: # Permite que você execute manualmente pelo botão no GitHub
+  workflow_dispatch: # Permite que você rode o bot manualmente para testar
 
 jobs:
-  scrape:
+  run-scraper:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,12 +20,11 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
+        # Instala as bibliotecas listadas no seu package.json
         run: npm install
 
-      - name: Run Hunter Bot
-        run: node scraping-script.js
-
-      - name: Run Hunter Bot
-        run: node scraping-script.js
+      - name: Run scraping script
+        # Aqui é onde os segredos do GitHub entram no ambiente do Node.js
         env:
-          EMAIL_PASS: ${{ process.env.EMAIL_PASS }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+        run: node scraping-script.js
