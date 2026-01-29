@@ -4,7 +4,7 @@ on:
   schedule:
     # 08:00 UTC corresponde às 05:00 AM no horário de Brasília (GMT-3)
     - cron: '0 8 * * *'
-  workflow_dispatch: # Permite que você rode o bot manualmente para testar
+  workflow_dispatch: 
 
 jobs:
   run-scraper:
@@ -20,11 +20,9 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        # Instala as bibliotecas listadas no seu package.json
         run: npm install
 
       - name: Run scraping script
-        # Aqui é onde os segredos do GitHub entram no ambiente do Node.js
         env:
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         run: node scraping-script.js
