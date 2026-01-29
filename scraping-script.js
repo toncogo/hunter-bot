@@ -18,7 +18,7 @@ async function enviarEmail(listaConcursos) {
         service: 'gmail',
         auth: {
             user: 'botoncogo@gmail.com',
-            pass: 'process.env.EMAIL_PASS' //
+            pass: process.env.EMAIL_PASS //
         }
     });
 
