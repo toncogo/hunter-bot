@@ -15,7 +15,7 @@ const CARGOS_ESPECIFICOS = [
 
 async function enviarEmail(listaConcursos) {
     let transporter = nodemailer.createTransport({
-        host: 'smtp-relay.brevo.com',
+        host: 'smtp.zoho.com',
         port: 465,
         secure: true,
         auth: {
