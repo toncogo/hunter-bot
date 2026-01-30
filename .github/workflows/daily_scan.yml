@@ -24,6 +24,6 @@ jobs:
 
       - name: Run scraping script
         env:
-          BREVO_USER: ${{ secrets.ZOHO_USER }}
-          BREVO_PASS: ${{ secrets.ZOHO_PASS }}
+          ZOHO_USER: ${{ secrets.ZOHO_USER }}
+          ZOHO_PASS: ${{ secrets.ZOHO_PASS }}
         run: node scraping-script.js
