@@ -16,10 +16,11 @@ const CARGOS_ESPECIFICOS = [
 async function enviarEmail(listaConcursos) {
     let transporter = nodemailer.createTransport({
         host: 'smtp-relay.brevo.com',
-        port: 587,
+        port: 465,
+        secure: true,
         auth: {
-            user: process.env.BREVO_USER,
-            pass: process.env.BREVO_PASS
+            user: process.env.ZOHO_USER,
+            pass: process.env.ZOHO_PASS
         }
     });
 
@@ -76,7 +77,7 @@ async function enviarEmail(listaConcursos) {
 
     try {
         await transporter.sendMail({
-            from: '"Hunter Bot 🕵️" <botoncogo@gmail.com>',
+            from: '"Hunt3r 🕵️" <55-67993537636_156@zohomail.com>',
             to: 'cogotechnologies@gmail.com',
             subject: `🚀 ${listaConcursos.length} Concursos Encontrados - ${new Date().toLocaleDateString()}`,
             html: corpoHtml
@@ -115,7 +116,7 @@ async function extrairDados(page) {
 }
 
 async function buscarVagas() {
-    console.log("\x1b[36m%s\x1b[0m", "🤖 Iniciando Varredura Hunter Bot 3.2...");
+    console.log("\x1b[36m%s\x1b[0m", "🤖 Iniciando Varredura Hunt3r B*t 3.2...");
     const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
     let resultadosBrutos = [];
