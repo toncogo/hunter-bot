@@ -24,5 +24,6 @@ jobs:
 
       - name: Run scraping script
         env:
-          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          BREVO_USER: ${{ secrets.BREVO_USER }}
+          BREVO_PASS: ${{ secrets.BREVO_PASS }}
         run: node scraping-script.js

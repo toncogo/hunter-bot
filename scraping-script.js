@@ -15,10 +15,11 @@ const CARGOS_ESPECIFICOS = [
 
 async function enviarEmail(listaConcursos) {
     let transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp-relay.brevo.com',
+        port: 587,
         auth: {
-            user: 'botoncogo@gmail.com',
-            pass: process.env.EMAIL_PASS //
+            user: process.env.BREVO_USER,
+            pass: process.env.BREVO_PASS
         }
     });
 
